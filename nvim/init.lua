@@ -38,3 +38,4 @@ require('hologram').setup{
 }
 require "bliss.indent-blankline"
 require "bliss.clipboard-image"
+require "bliss.lualine"

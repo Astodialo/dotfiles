@@ -5,7 +5,7 @@ local options = {
   -- Learn more about them by doing: `:help options`
 
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-  cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+  cmdheight = 0,                           -- don't want cmdline to take valuable space when not being used. It will come when you press `:`.
   completeopt = { "menuone", "noselect" },
   --[[
     In vim, we have `ins-completion` (standing for "insert completion").
