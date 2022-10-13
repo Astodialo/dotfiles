@@ -47,7 +47,8 @@ return packer.startup(function(use)
   use { "catppuccin/nvim", as = "catppuccin" }
   use { "folke/tokyonight.nvim" }
   use {'shaunsingh/oxocarbon.nvim', run = './install.sh'}
-  use "EdenEast/nightfox.nvim" 
+  use "EdenEast/nightfox.nvim"
+  use 'Mofiqul/dracula.nvim'
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
@@ -111,7 +112,7 @@ return packer.startup(function(use)
   use 'L3MON4D3/LuaSnip' -- Our snippet engine.
   use "rafamadriz/friendly-snippets"  -- includes snippets for many languages.
 
-  
+
   -- Lua
   use {
     "folke/which-key.nvim",
@@ -120,17 +121,18 @@ return packer.startup(function(use)
     end
   }
 
-  
+
   use 'ekickx/clipboard-image.nvim'  -- to paste images in your markdown file. Use `PasteImg`
 
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = 
-    function() 
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup =
+    function()
       local g = vim.g
 			g.mkdp_page_title = "${name}.md"
       g.mkdp_filetypes = { "markdown" }
       g.mkdp_browser = '/usr/bin/brave'
+      g.mkdp_auto_close = 0
     end, ft = { "markdown" }, })
-  
+
   use {'edluffy/hologram.nvim'}
   use {"ellisonleao/glow.nvim"}
   use {"jbyuki/nabla.nvim"}
@@ -158,14 +160,14 @@ return packer.startup(function(use)
             ["core.presenter"] = {
               config = {
                 zen_mode = "zen-mode"
-              }  
+              }
             }
           }
         }
     end,
     requires = "nvim-lua/plenary.nvim"
   }
-  --
+
   -- Following is required by neorg-presenter
   use {
     "folke/zen-mode.nvim",
@@ -190,7 +192,7 @@ return packer.startup(function(use)
       require('gitsigns').setup()
     end
   }
-  
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }

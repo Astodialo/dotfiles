@@ -13,6 +13,7 @@ require("bufferline").setup{
         padding = 1
       }
     },
+    tab_size = 10,
     separator_style = "slant"  -- So as to have trapezium shape tab.
   }
 }

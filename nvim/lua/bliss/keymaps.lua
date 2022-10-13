@@ -45,6 +45,8 @@ M.general = {
     -- Buffer navigation
     ["<S-h>"] = { "<cmd>BufferLineCyclePrev<cr>", "go to left buffer" },
     ["<S-l>"] = { "<cmd>BufferLineCycleNext<cr>", "go to right buffer" },
+    ["<C-S-h>"] = { "<cmd>BufferLineMovePrev<cr>", "move this buffer to left" },
+    ["<C-S-l>"] = { "<cmd>BufferLineMoveNext<cr>", "move this buffer right" },
 
     ['<leader>lD'] = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "see declaration" },
     ['<leader>ld'] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "see definition" },
@@ -63,6 +65,7 @@ M.general = {
 
     -- File operations.
     ['<leader>Fc'] = { "<cmd>bd<cr>", "close the buffer" },
+    ['<leader>c'] = { "<cmd>bd<cr>", "close the buffer" },
 
     -- Cursor operations.
     ['gx'] = { "<cmd>call jobstart(['xdg-open', expand('<cfile>')], {'detach': v:true})<CR>",
