@@ -10,9 +10,12 @@ configs.setup({
 		enable = true, -- false will disable the whole extension
 		disable = { "" }, -- list of language that will be disabled
 	},
-	autopairs = {
-		enable = true,
-	},
+	-- autopairs = {
+	-- 	enable = true,
+	-- },
+ --  autotag = {
+ --    enable = true,
+ --  },
 	indent = { enable = true, disable = {} },
   rainbow = {
     enable = true,

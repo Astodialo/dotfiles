@@ -46,7 +46,6 @@ return packer.startup(function(use)
 	-- Colorschemes
   use { "catppuccin/nvim", as = "catppuccin" }
   use { "folke/tokyonight.nvim" }
-  use {'shaunsingh/oxocarbon.nvim', run = './install.sh'}
   use "EdenEast/nightfox.nvim"
   use 'Mofiqul/dracula.nvim'
 
@@ -62,8 +61,12 @@ return packer.startup(function(use)
     run = ':TSUpdate'
 	})
   use {
-	"windwp/nvim-autopairs",
+	  "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
+  }
+  use {
+	  "windwp/nvim-ts-autotag",
+    config = function() require("nvim-ts-autotag").setup {} end
   }
   use({ "p00f/nvim-ts-rainbow" })  -- rainbow parentheses for neovim using tree-sitter
   use({ "nvim-treesitter/playground" })

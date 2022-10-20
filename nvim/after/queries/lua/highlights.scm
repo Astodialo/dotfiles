@@ -1,2 +1,3 @@
 ;; extends
-((function_call name: (identifier) @TSNote (#eq? @TSNote "require")) (#set! conceal ""))
+((identifier) @debug (#vim-match? @debug "^__*" ))
+(("local" @conceal) (#set! conceal ""))
