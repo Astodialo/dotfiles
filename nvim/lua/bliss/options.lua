@@ -31,6 +31,8 @@ local options = {
     recalling the search pattern from history and hitting <Enter>.
   --]]
   smartindent = true,                      -- make indenting smarter again
+  breakindent = true,                      -- This and below one
+  showbreak = ">> ",                       -- is picked from: https://stackoverflow.com/questions/1204149/smart-wrap-in-vim
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
   termguicolors = true,                    -- set term gui colors (most terminals support this)
