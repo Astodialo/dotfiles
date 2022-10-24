@@ -94,12 +94,13 @@ return packer.startup(function(use)
 
   -- Now comes lsp & completion part
   use {
-      'junnplus/lsp-setup.nvim',
-      requires = {
-          'neovim/nvim-lspconfig',  -- nvim has inbuilt lsp, this plugin allows for its easy configuration
-          'williamboman/mason.nvim', -- allows you to easily manage external editor tooling such as LSP servers, DAP servers, linters, and formatters through a single interface. i to install, u to update, X to uninstall. :LspInfo to see lsp client attached to a buffer. See default configuration at: https://github.com/williamboman/mason.nvim#default-configuration
-          'williamboman/mason-lspconfig.nvim', -- mason-lspconfig.nvim closes some gaps that exist between mason.nvim and lspconfig.
-      }
+    'junnplus/lsp-setup.nvim',
+    requires = {
+      'neovim/nvim-lspconfig',  -- nvim has inbuilt lsp, this plugin allows for its easy configuration
+      'williamboman/mason.nvim', -- allows you to easily manage external editor tooling such as LSP servers, DAP servers, linters, and formatters through a single interface. i to install, u to update, X to uninstall. :LspInfo to see lsp client attached to a buffer. See default configuration at: https://github.com/williamboman/mason.nvim#default-configuration
+      'williamboman/mason-lspconfig.nvim', -- mason-lspconfig.nvim closes some gaps that exist between mason.nvim and lspconfig.
+      'folke/neodev.nvim',  -- not as such required, but I'll use this to setup sumneko-lua.
+    }
   }
   -- use {"mfussenegger/nvim-dap"}  -- is a Debug Adapter Protocol client
   -- use {"jose-elias-alvarez/null-ls.nvim"}  -- help in linting & formatting
