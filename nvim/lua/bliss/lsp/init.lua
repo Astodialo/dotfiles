@@ -20,8 +20,11 @@ require('lsp-setup').setup({
           completion = {
             callSnippet = "Replace",
           },
-        }
-      }
+          format = {
+            enable = false,
+          },
+        },
+      },
     },
   }
 })
