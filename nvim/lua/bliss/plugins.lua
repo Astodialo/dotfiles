@@ -125,6 +125,7 @@ return packer.startup(function(use)
     end
   }
 
+  use 'lervag/vimtex'
 
   use 'ekickx/clipboard-image.nvim' -- to paste images in your markdown file. Use `PasteImg`
 
@@ -182,6 +183,11 @@ return packer.startup(function(use)
         -- refer to the configuration section below
       }
     end
+  }
+
+  use {
+    'simrat39/symbols-outline.nvim',
+    config = function() require("symbols-outline").setup() end
   }
 
   use {
