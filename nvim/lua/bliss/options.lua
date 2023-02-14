@@ -1,8 +1,6 @@
 -- We need to put `local` below as o/w variable is global.
 local options = {
-
-  -- Can play with these options live (in neovim) by doing, for example: `set cmdheight=1`
-  -- Learn more about them by doing: `:help options`
+  guicursor = "",
 
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 0,                           -- don't want cmdline to take valuable space when not being used. It will come when you press `:`.
@@ -31,8 +29,6 @@ local options = {
     recalling the search pattern from history and hitting <Enter>.
   --]]
   smartindent = true,                      -- make indenting smarter again
-  breakindent = true,                      -- This and below one
-  showbreak = ">> ",                       -- is picked from: https://stackoverflow.com/questions/1204149/smart-wrap-in-vim
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
   termguicolors = true,                    -- set term gui colors (most terminals support this)
@@ -45,10 +41,8 @@ local options = {
   hlsearch = false,                        -- when we sesarch for something, after finding a match, nvim still highlight other matches. This setting disables that. Else, you can leave it at default, and type `:noh`
   scrolloff = 999,                         -- This is very important as usually when you change buffers, (neo)vim tries to put your cursor at center, which is disturbing when trying to compare documents. With this that issue doesn't happen as it as such keeps cursor at center. Also, when you reach at end or near beginning of file, your cursor can't be at center but still neovim doesn't give issue when changing buffer. BTW, I learned about this from here: https://vim.fandom.com/wiki/Avoid_scrolling_when_switch_buffers.
   signcolumn = "number",                   -- This is an important setting. Suppose you are editing and LSP discovers some issue on your line then it will insert its icon in sign column, making sign column thicker and your text shifting rightwards, I don't like this jankiness. One of the solution would be to do something like "yes:2" but I have set it to "number", learning from: https://www.reddit.com/r/neovim/comments/neaeej/only_just_discovered_set_signcolumnnumber_i_like/. One thing to note though, that in case their are multiple competing signs, only one will be shown.
-  linebreak = true,                        -- When long lines get wrapped (to new line), I want the whole word to come at new line, i.e., don't want the word to broken in b/w. Learned from: https://stackoverflow.com/a/9692577.
-  keymodel = 'startsel',                   -- If you want that shift + arrow to select functionality, learned from: https://stackoverflow.com/a/47170991
 }
 
 for k, v in pairs(options) do
-  vim.opt[k] = v  -- this is how we set options in neovim
+  vim.opt[k] = v  
 end

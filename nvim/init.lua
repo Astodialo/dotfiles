@@ -5,16 +5,16 @@ require "bliss.plugins"
 -- Theme (colorscheme) settings
 require('nightfox').setup({
   options = {
-    transparent = false, -- Disable setting background
+    transparent = true,    -- Disable setting background
     terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
-    dim_inactive = false, -- Non focused panes set to alternative background
+    dim_inactive = false,   -- Non focused panes set to alternative background
     styles = {
       comments = "italic",
-      keywords = "italic",
-      types = "italic",
-      conditionals = "italic",
-      constants = "italic",
-      functions = "italic",
+      keywords = "NONE",
+      types = "bold",
+      conditionals = "NONE",
+      constants = "NONE",
+      functions = "bold",
       numbers = "NONE",
       operators = "NONE",
       strings = "NONE",
@@ -23,7 +23,7 @@ require('nightfox').setup({
   }
 })
 
-vim.cmd [[colorscheme duskfox]]
+vim.cmd [[colorscheme terafox]]
 
 require "bliss.cmp"
 require "bliss.lsp"
@@ -39,4 +39,3 @@ require('hologram').setup {
 require "bliss.indent-blankline"
 require "bliss.clipboard-image"
 require "bliss.lualine"
-require "bliss.mini"

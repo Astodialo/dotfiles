@@ -1,8 +1,3 @@
--- IMPORTANT: make sure to setup neodev BEFORE lspconfig
-require("neodev").setup({
-  -- add any options here, or leave empty to use the default settings
-})
-
 require('lsp-setup').setup({
   default_mappings = false,
 
@@ -13,19 +8,7 @@ require('lsp-setup').setup({
           formattingProvider = "stylish-haskell"
         }
       }
-    },
-    sumneko_lua = {
-      settings = {
-        Lua = {
-          completion = {
-            callSnippet = "Replace",
-          },
-          format = {
-            enable = false,
-          },
-        },
-      },
-    },
+    }
   }
 })
 

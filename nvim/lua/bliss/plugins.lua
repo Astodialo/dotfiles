@@ -51,7 +51,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })
-  use({ "nvim-lua/popup.nvim" }) -- putting it here as I am only using it for telescope's "telescope-media-files" extension
+  use({ "nvim-lua/popup.nvim" })  -- putting it here as I am only using it for telescope's "telescope-media-files" extension
   use({ "nvim-telescope/telescope-media-files.nvim" })
 
   -- Treesitter
@@ -68,7 +68,7 @@ return packer.startup(function(use)
     "windwp/nvim-ts-autotag",
     config = function() require("nvim-ts-autotag").setup {} end
   }
-  use({ "p00f/nvim-ts-rainbow" }) -- rainbow parentheses for neovim using tree-sitter
+  use({ "p00f/nvim-ts-rainbow" })  -- rainbow parentheses for neovim using tree-sitter
   use({ "nvim-treesitter/playground" })
 
   use "lukas-reineke/indent-blankline.nvim"
@@ -77,7 +77,7 @@ return packer.startup(function(use)
   use {
     'numToStr/Comment.nvim',
   }
-  use({ "JoosepAlviste/nvim-ts-context-commentstring" }) -- now in the case of embedded language like in case of JSX, we use this with our comment plugin above.
+  use({ "JoosepAlviste/nvim-ts-context-commentstring" })  -- now in the case of embedded language like in case of JSX, we use this with our comment plugin above.
 
   -- nvim-tree
   use {
@@ -88,19 +88,18 @@ return packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
-  use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'nvim-tree/nvim-web-devicons'}
 
-  use { "akinsho/toggleterm.nvim", tag = '*' }
+  use {"akinsho/toggleterm.nvim", tag = '*'}
 
   -- Now comes lsp & completion part
   use {
-    'junnplus/lsp-setup.nvim',
-    requires = {
-      'neovim/nvim-lspconfig', -- nvim has inbuilt lsp, this plugin allows for its easy configuration
-      'williamboman/mason.nvim', -- allows you to easily manage external editor tooling such as LSP servers, DAP servers, linters, and formatters through a single interface. i to install, u to update, X to uninstall. :LspInfo to see lsp client attached to a buffer. See default configuration at: https://github.com/williamboman/mason.nvim#default-configuration
-      'williamboman/mason-lspconfig.nvim', -- mason-lspconfig.nvim closes some gaps that exist between mason.nvim and lspconfig.
-      'folke/neodev.nvim', -- not as such required, but I'll use this to setup sumneko-lua.
-    }
+      'junnplus/lsp-setup.nvim',
+      requires = {
+          'neovim/nvim-lspconfig',  -- nvim has inbuilt lsp, this plugin allows for its easy configuration
+          'williamboman/mason.nvim', -- allows you to easily manage external editor tooling such as LSP servers, DAP servers, linters, and formatters through a single interface. i to install, u to update, X to uninstall. :LspInfo to see lsp client attached to a buffer. See default configuration at: https://github.com/williamboman/mason.nvim#default-configuration
+          'williamboman/mason-lspconfig.nvim', -- mason-lspconfig.nvim closes some gaps that exist between mason.nvim and lspconfig.
+      }
   }
   -- use {"mfussenegger/nvim-dap"}  -- is a Debug Adapter Protocol client
   -- use {"jose-elias-alvarez/null-ls.nvim"}  -- help in linting & formatting
@@ -114,7 +113,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline' -- cmdline
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp. It's actual description reads that it is LuaSnip's (the below written package) completion source for `nvim-cmp`.
   use 'L3MON4D3/LuaSnip' -- Our snippet engine.
-  use "rafamadriz/friendly-snippets" -- includes snippets for many languages.
+  use "rafamadriz/friendly-snippets"  -- includes snippets for many languages.
 
 
   -- Lua
@@ -125,50 +124,49 @@ return packer.startup(function(use)
     end
   }
 
-  use 'lervag/vimtex'
 
-  use 'ekickx/clipboard-image.nvim' -- to paste images in your markdown file. Use `PasteImg`
+  use 'ekickx/clipboard-image.nvim'  -- to paste images in your markdown file. Use `PasteImg`
 
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup =
-  function()
-    local g = vim.g
-    g.mkdp_page_title = "${name}.md"
-    g.mkdp_filetypes = { "markdown" }
-    g.mkdp_browser = '/usr/bin/brave'
-    g.mkdp_auto_close = 0
-  end, ft = { "markdown" }, })
+    function()
+      local g = vim.g
+      g.mkdp_page_title = "${name}.md"
+      g.mkdp_filetypes = { "markdown" }
+      g.mkdp_browser = '/usr/bin/brave'
+      g.mkdp_auto_close = 0
+    end, ft = { "markdown" }, })
 
-  use { 'edluffy/hologram.nvim' }
-  use { "ellisonleao/glow.nvim" }
-  use { "jbyuki/nabla.nvim" }
+  use {'edluffy/hologram.nvim'}
+  use {"ellisonleao/glow.nvim"}
+  use {"jbyuki/nabla.nvim"}
   use {
     "nvim-neorg/neorg",
     run = ":Neorg sync-parsers",
     config = function()
-      require('neorg').setup {
-        load = {
-          ["core.defaults"] = {},
-          ["core.norg.concealer"] = {
-            config = { -- Note that this table is optional and doesn't need to be provided
-              -- Configuration here
-            }
-          },
-          ["core.norg.completion"] = {
-            config = { -- Note that this table is optional and doesn't need to be provided
-              engine = "nvim-cmp",
-            }
-          },
-          ["core.export"] = {
-            config = { -- Note that this table is optional and doesn't need to be provided
-            }
-          },
-          ["core.presenter"] = {
-            config = {
-              zen_mode = "zen-mode"
+        require('neorg').setup {
+          load = {
+            ["core.defaults"] = {},
+            ["core.norg.concealer"] = {
+              config = { -- Note that this table is optional and doesn't need to be provided
+                  -- Configuration here
+              }
+            },
+            ["core.norg.completion"] = {
+              config = { -- Note that this table is optional and doesn't need to be provided
+                engine = "nvim-cmp",
+              }
+            },
+            ["core.export"] = {
+              config = { -- Note that this table is optional and doesn't need to be provided
+              }
+            },
+            ["core.presenter"] = {
+              config = {
+                zen_mode = "zen-mode"
+              }
             }
           }
         }
-      }
     end,
     requires = "nvim-lua/plenary.nvim"
   }
@@ -183,11 +181,6 @@ return packer.startup(function(use)
         -- refer to the configuration section below
       }
     end
-  }
-
-  use {
-    'simrat39/symbols-outline.nvim',
-    config = function() require("symbols-outline").setup() end
   }
 
   use {
@@ -207,8 +200,6 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-
-  use 'echasnovski/mini.nvim' -- using https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-surround.md
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

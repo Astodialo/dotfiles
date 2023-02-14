@@ -55,18 +55,18 @@ cmp.setup {
     end,
   },
   mapping = {
-    ["<Up>"] = cmp.mapping.select_prev_item(),  -- not by default, so needed to assign
-		["<Down>"] = cmp.mapping.select_next_item(),  -- not by default
-    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),  -- Sometimes the window under consideration is very big, this allows to scroll through that. 
+    ["<Up>"] = cmp.mapping.select_prev_item(),
+		["<Down>"] = cmp.mapping.select_next_item(),
+    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),  -- Usually, you'll type and then will be shown completions. Here, without typing anything and just pressing this shortcut, you'll be shown suggestions.
+    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), 
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),  -- 'i' is for insert mode.
       c = cmp.mapping.close(),
     },
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<S-CR>"] = cmp.mapping.confirm { select = true },
+    ["<CR>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)  -- magic to get "super tab" functionality.
       if cmp.visible() then
         cmp.select_next_item()

@@ -48,9 +48,8 @@ M.general = {
     ["<C-S-h>"] = { "<cmd>BufferLineMovePrev<cr>", "move this buffer to left" },
     ["<C-S-l>"] = { "<cmd>BufferLineMoveNext<cr>", "move this buffer right" },
 
-    -- LSP
     ['<leader>lD'] = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "see declaration" },
-    ['<leader>ld'] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "see definition" },  -- go back to your previous buffer with <C-6>
+    ['<leader>ld'] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "see definition" },
     ['<leader>lt'] = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "see type definition" },
     ['<leader>lT'] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "see signature" },
     ['<leader>li'] = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "see implementation" },
