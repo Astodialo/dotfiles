@@ -1,13 +1,10 @@
-export CARDANO_NODE=~/cardano-node-1.35.4
+export CARDANO_NODE=~/cardano-node-1.35.6
 export PATH=$CARDANO_NODE:$PATH
 export TESTNETPATH=~/testnet
 
 #magic id for preview network is 2, preprod 1
-export TESTNET="--testnet-magic 2"
 export PREPROD="--testnet-magic 1"
 export PREVIEW="--testnet-magic 2"
-#legacy magic id
-#export TESTNET="--testnet-magic 1097911063"
 
 export CARDANO_NODE_SOCKET_PATH=~/testnet/node.socket
 
