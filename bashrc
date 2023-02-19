@@ -25,3 +25,4 @@ function utxo() { cardano-cli query utxo $TESTNET --address $1 ; }
 function utxof() { cardano-cli query utxo $TESTNET --address $(cat $1) ; }
 function submit() { cardano-cli transaction submit --tx-file $1 $TESTNET ;}
 
+alias plutix='nix-shell ~/plutus-apps/shell.nix'
